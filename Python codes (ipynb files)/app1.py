@@ -4,8 +4,16 @@ import numpy as np
 import pickle
 from sklearn.preprocessing import LabelEncoder
 
-# Load the trained model
-with open('model_pickle1.pkl', 'rb') as file:
+import os
+
+# Get the absolute path to the directory of the script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, 'model_pickle1.pkl')
+
+# Open the file
+with open(file_path, 'rb') as file:
+# # Load the trained model
+# with open('model_pickle1.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Function to preprocess input data
